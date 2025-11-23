@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from './pages/Dashboard'; // Importamos tu página principal
-import './App.css'; // Mantenemos los estilos globales
+import "./styles/App.css";
 
 function App() {
   return (
