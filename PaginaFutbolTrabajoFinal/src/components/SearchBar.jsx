@@ -1,33 +1,20 @@
 import React from 'react';
-import '../styles/layout.css'; // Usaremos estilos generales por ahora
 
-const SearchBar = ({ searchTerm, setSearchTerm }) => {
+function SearchBar({ searchTerm, setSearchTerm }) {
   return (
-    <div className="search-container" style={{ margin: '20px 0' }}>
+    <div className="search-bar">
       <input
         type="text"
-        className="search-input"
-        placeholder="Buscar por nombre..."
+        placeholder="Buscar jugador..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{
-          padding: '10px',
-          width: '100%',
-          maxWidth: '400px',
-          borderRadius: '8px',
-          border: '1px solid #ccc'
-        }}
+        className="search-input"
       />
       {searchTerm && (
-        <button 
-          onClick={() => setSearchTerm('')}
-          style={{ marginLeft: '10px', padding: '10px', cursor: 'pointer' }}
-        >
-          Limpiar
-        </button>
+        <button onClick={() => setSearchTerm('')} className="search-clear">✕</button>
       )}
     </div>
   );
-};
+}
 
 export default SearchBar;

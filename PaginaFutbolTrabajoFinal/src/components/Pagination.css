@@ -1,0 +1,132 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pagination__info {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.pagination__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pagination__btn {
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.pagination__btn:hover:not(:disabled) {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+.pagination__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination__pages {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.pagination__page {
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__page:hover {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+.pagination__page--active {
+  background: #ffc107;
+  color: #1a1a2e;
+  border-color: #ffc107;
+  font-weight: 600;
+}
+
+.pagination__ellipsis {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0 5px;
+}
+
+.pagination__per-page {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination__label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.pagination__select {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.pagination__select:hover {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+.pagination__select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pagination__controls {
+    justify-content: center;
+  }
+
+  .pagination__info,
+  .pagination__per-page {
+    text-align: center;
+    justify-content: center;
+  }
+}

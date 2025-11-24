@@ -1,0 +1,22 @@
+export const playersData = [
+  { id: 1, nombre: 'Lionel Messi', club: 'Inter Miami', posicion: 'Delantero', pais: 'Argentina', edad: 37, goles: 24, asistencias: 19, rating: 9.7 },
+  { id: 2, nombre: 'Kevin De Bruyne', club: 'Manchester City', posicion: 'Mediocampista', pais: 'Bélgica', edad: 33, goles: 9, asistencias: 23, rating: 9.3 },
+  { id: 3, nombre: 'Kylian Mbappé', club: 'Paris Saint-Germain', posicion: 'Delantero', pais: 'Francia', edad: 26, goles: 31, asistencias: 11, rating: 9.2 },
+  { id: 4, nombre: 'Erling Haaland', club: 'Manchester City', posicion: 'Delantero', pais: 'Noruega', edad: 24, goles: 35, asistencias: 6, rating: 9.1 },
+  { id: 5, nombre: 'Jude Bellingham', club: 'Real Madrid', posicion: 'Mediocampista', pais: 'Inglaterra', edad: 22, goles: 18, asistencias: 12, rating: 9.0 },
+  { id: 6, nombre: 'Vinícius Júnior', club: 'Real Madrid', posicion: 'Extremo', pais: 'Brasil', edad: 24, goles: 20, asistencias: 8, rating: 8.9 },
+  { id: 7, nombre: 'Rodri', club: 'Manchester City', posicion: 'Mediocampista', pais: 'España', edad: 28, goles: 6, asistencias: 5, rating: 8.8 },
+  { id: 8, nombre: 'Harry Kane', club: 'Bayern Munich', posicion: 'Delantero', pais: 'Inglaterra', edad: 31, goles: 36, asistencias: 7, rating: 8.7 },
+  { id: 9, nombre: 'Pedri', club: 'Barcelona', posicion: 'Mediocampista', pais: 'España', edad: 21, goles: 5, asistencias: 9, rating: 8.6 },
+  { id: 10, nombre: 'Gavi', club: 'Barcelona', posicion: 'Mediocampista', pais: 'España', edad: 20, goles: 3, asistencias: 4, rating: 8.5 },
+  { id: 11, nombre: 'Florian Wirtz', club: 'Bayer Leverkusen', posicion: 'Extremo', pais: 'Alemania', edad: 21, goles: 18, asistencias: 13, rating: 8.4 },
+  { id: 12, nombre: 'Vinicius Jr', club: 'Real Madrid', posicion: 'Extremo', pais: 'Brasil', edad: 23, goles: 17, asistencias: 6, rating: 8.3 },
+  { id: 13, nombre: 'Jamal Musiala', club: 'Bayern Munich', posicion: 'Extremo', pais: 'Alemania', edad: 21, goles: 12, asistencias: 8, rating: 8.2 },
+  { id: 14, nombre: 'Phil Foden', club: 'Manchester City', posicion: 'Extremo', pais: 'Inglaterra', edad: 24, goles: 19, asistencias: 10, rating: 8.1 },
+  { id: 15, nombre: 'Alexander Isak', club: 'Newcastle United', posicion: 'Delantero', pais: 'Suecia', edad: 25, goles: 21, asistencias: 3, rating: 8.0 },
+  { id: 16, nombre: 'Bukayo Saka', club: 'Arsenal', posicion: 'Extremo', pais: 'Inglaterra', edad: 23, goles: 14, asistencias: 7, rating: 7.9 },
+  { id: 17, nombre: 'Lucas Vázquez', club: 'Real Madrid', posicion: 'Defensa', pais: 'España', edad: 33, goles: 4, asistencias: 5, rating: 7.8 },
+  { id: 18, nombre: 'Juan Mata', club: 'Galatasaray', posicion: 'Mediocampista', pais: 'España', edad: 35, goles: 2, asistencias: 3, rating: 7.7 },
+  { id: 19, nombre: 'Neymar Jr', club: 'Al-Hilal', posicion: 'Extremo', pais: 'Brasil', edad: 32, goles: 8, asistencias: 5, rating: 7.6 },
+  { id: 20, nombre: 'Robert Lewandowski', club: 'Barcelona', posicion: 'Delantero', pais: 'Polonia', edad: 36, goles: 19, asistencias: 4, rating: 7.5 }
+];

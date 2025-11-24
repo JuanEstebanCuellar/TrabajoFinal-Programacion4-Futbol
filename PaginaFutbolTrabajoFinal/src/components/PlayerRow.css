@@ -1,0 +1,50 @@
+.player-row {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.player-row:hover {
+  background: rgba(255, 193, 7, 0.1) !important;
+  transform: scale(1.01);
+}
+
+.player-row--dark {
+  color: #e0e0e0;
+}
+
+.player-row--dark:hover {
+  background: rgba(255, 193, 7, 0.15) !important;
+}
+
+.player-row--even {
+  background: rgba(227, 242, 253, 0.3);
+}
+
+.player-row--odd {
+  background: rgba(255, 243, 224, 0.3);
+}
+
+.player-row__cell {
+  padding: 15px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.player-row__cell--favorite {
+  text-align: center;
+  width: 50px;
+}
+
+.player-row__favorite-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffc107;
+  transition: transform 0.2s;
+  padding: 0;
+}
+
+.player-row__favorite-btn:hover {
+  transform: scale(1.3);
+}

@@ -1,0 +1,76 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle__label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.theme-toggle__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle__slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.4s;
+  border-radius: 30px;
+  border: 2px solid rgba(255, 193, 7, 0.3);
+}
+
+.theme-toggle__slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 2px;
+  bottom: 2px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.theme-toggle__input:checked + .theme-toggle__slider {
+  background: rgba(255, 193, 7, 0.4);
+  border-color: #ffc107;
+}
+
+.theme-toggle__input:checked + .theme-toggle__slider::before {
+  transform: translateX(30px);
+  background: #ffc107;
+}
+
+.theme-toggle__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.theme-toggle__input:not(:checked) + .theme-toggle__slider .theme-toggle__icon {
+  left: 6px;
+}
+
+.theme-toggle__input:checked + .theme-toggle__slider .theme-toggle__icon {
+  right: 6px;
+}
+
+.theme-toggle__text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  white-space: nowrap;
+}

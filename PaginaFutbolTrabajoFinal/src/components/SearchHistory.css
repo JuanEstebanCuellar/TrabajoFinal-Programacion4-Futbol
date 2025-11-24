@@ -1,0 +1,120 @@
+.search-history {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.search-history__toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.search-history__toggle:hover {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: #ffc107;
+}
+
+.search-history__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 5px;
+  background: rgba(26, 26, 46, 0.98);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  animation: dropdown-slide 0.2s ease-out;
+}
+
+@keyframes dropdown-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-history__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.search-history__clear {
+  background: rgba(255, 59, 48, 0.2);
+  border: 1px solid rgba(255, 59, 48, 0.4);
+  color: #ff3b30;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.search-history__clear:hover {
+  background: rgba(255, 59, 48, 0.3);
+  border-color: #ff3b30;
+}
+
+.search-history__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.search-history__item {
+  padding: 12px 15px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-history__item:last-child {
+  border-bottom: none;
+}
+
+.search-history__item:hover {
+  background: rgba(255, 193, 7, 0.15);
+  padding-left: 20px;
+}
+
+.search-history__icon {
+  opacity: 0.6;
+}
+
+/* Scrollbar styling */
+.search-history__list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-history__list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.search-history__list::-webkit-scrollbar-thumb {
+  background: rgba(255, 193, 7, 0.5);
+  border-radius: 3px;
+}

@@ -1,77 +1,50 @@
 import React from 'react';
-import '../styles/table.css'; // Importamos los estilos específicos de la tabla
 
-const PlayerTable = ({ players }) => {
-  
-  // Validación: Si no hay jugadores (por el filtro), mostramos mensaje
+function PlayerTable({ players, onSort, rowColors, favorites, onToggleFavorite, onRowClick }) {
   if (!players || players.length === 0) {
-    return (
-      <div className="no-results">
-        <p>🚫 No se encontraron jugadores con ese nombre.</p>
-      </div>
-    );
+    return React.createElement('div', { className: 'player-table-empty' }, 'No hay jugadores para mostrar');
   }
 
-  // Función auxiliar para asignar color según la posición (UI/UX)
-  const getPositionClass = (position) => {
-    const pos = position.toLowerCase();
-    if (pos.includes('delantero')) return 'badge--forward';
-    if (pos.includes('mediocampista')) return 'badge--midfielder';
-    if (pos.includes('defensa')) return 'badge--defender';
-    if (pos.includes('portero')) return 'badge--goalkeeper';
-    return 'badge--default';
-  };
+  var columns = ['nombre', 'club', 'posicion', 'pais', 'edad', 'goles', 'asistencias', 'rating'];
 
   return (
-    <div className="table-container">
-      <table className="player-table">
-        <thead className="player-table__head">
-          <tr>
-            <th className="player-table__th">ID</th>
-            <th className="player-table__th">Jugador</th>
-            <th className="player-table__th">Club</th>
-            <th className="player-table__th">Posición</th>
-            <th className="player-table__th">País</th>
-            <th className="player-table__th center">Edad</th>
-            <th className="player-table__th center">Goles</th>
-            <th className="player-table__th center">Rating</th>
-          </tr>
-        </thead>
-        <tbody className="player-table__body">
-          {players.map((player) => (
-            <tr key={player.id} className="player-table__row">
-              <td className="player-table__td identifier">#{player.id}</td>
-              
-              <td className="player-table__td font-bold">
-                {player.name}
-              </td>
-              
-              <td className="player-table__td">
-                {player.club}
-              </td>
-              
-              <td className="player-table__td">
-                <span className={`badge ${getPositionClass(player.position)}`}>
-                  {player.position}
-                </span>
-              </td>
-              
-              <td className="player-table__td">
-                {player.country}
-              </td>
-              
-              <td className="player-table__td center">{player.age}</td>
-              <td className="player-table__td center">{player.goals}</td>
-              
-              <td className="player-table__td center rating-cell">
-                <span className="rating-box">{player.rating}</span>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    React.createElement('div', { className: 'player-table-container' },
+      React.createElement('table', { className: 'player-table' },
+        React.createElement('thead', null,
+          React.createElement('tr', null,
+            React.createElement('th', { 'data-index': '0' }, 'FAV'),
+            columns.map(function(col, idx) {
+              return React.createElement('th', { key: col, onClick: function() { onSort(col); }, className: 'sortable', 'data-index': String(idx + 1) }, col.toUpperCase());
+            })
+          )
+        ),
+        React.createElement('tbody', null,
+          players.map(function(player, idx) {
+            var rowClass = '';
+            if (rowColors === 'pares' && idx % 2 === 0) rowClass = 'row-colored';
+            if (rowColors === 'impares' && idx % 2 !== 0) rowClass = 'row-colored';
+            
+            return React.createElement('tr', { key: player.id, className: rowClass, onClick: function() { onRowClick(player); } },
+              React.createElement('td', null,
+                React.createElement('button', {
+                  className: 'favorite-btn ' + (favorites.includes(player.id) ? 'active' : ''),
+                  onClick: function(e) { e.stopPropagation(); onToggleFavorite(player.id); }
+                }, '⭐')
+              ),
+              React.createElement('td', null, player.nombre),
+              React.createElement('td', null, player.club),
+              React.createElement('td', null, player.posicion),
+              React.createElement('td', null, player.pais),
+              React.createElement('td', null, player.edad),
+              React.createElement('td', null, player.goles),
+              React.createElement('td', null, player.asistencias),
+              React.createElement('td', null, player.rating)
+            );
+          })
+        )
+      )
+    )
   );
-};
+}
 
 export default PlayerTable;
